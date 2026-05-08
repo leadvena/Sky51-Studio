@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-studio-bg: #FDF9F6;
+  --color-studio-text: #2D2D2D;
+  --color-studio-border: #EBDCD3;
+  --color-studio-contrast: #FAF7F2;
+  --color-studio-accent: #D8CFCA;
+}
+
+@layer base {
+  body {
+    @apply bg-studio-bg text-studio-text font-serif antialiased border-[12px] border-white min-h-screen;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-light tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-studio-text text-white text-[10px] uppercase tracking-[0.2em] font-sans transition-all hover:opacity-90 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-3 border border-studio-text text-studio-text text-[10px] uppercase tracking-[0.2em] font-sans transition-all hover:bg-studio-text hover:text-white active:scale-95;
+  }
+
+  .nav-link {
+    @apply text-[10px] uppercase tracking-[0.2em] font-sans opacity-70 hover:opacity-100 transition-opacity;
+  }
+
+  .section-border {
+    @apply border-studio-border;
+  }
+}
